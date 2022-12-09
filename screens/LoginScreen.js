@@ -19,12 +19,15 @@ const LoginScreen = ({ navigation }) => {
                         onChangeText={(text) => setUser(text)}
                     />
                 </View>
+                <View style={styles.separator} />
                 <Text>Password</Text>
                 <TextInput
                     style={styles.input}
                     value={password}
                     onChangeText={(text) => setPassword(text)}
                 />
+                <View style={styles.separator} />
+                <View style={styles.separator} />
                 <TouchableHighlight
                     onPress={() => login(user, password)}
                     style={styles.button}
@@ -59,5 +62,8 @@ const styles = StyleSheet.create({
     },
     buttonForgotPassword: {
         alignSelf: "center",
+    },
+    separator: {
+        padding: 8,
     },
 });
