@@ -5,7 +5,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
             <TouchableHighlight onPress={() => navigation.navigate("Account")}>
-                <Text>Account</Text>
+                <Text>Accountku</Text>
             </TouchableHighlight>
         </View>
     );
