@@ -10,27 +10,29 @@ const LoginScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView>
-            <View style={{ padding: 24 }}>
+            <View style={styles.container}>
                 <View>
-                    <Text>Username</Text>
+                    <Text style={styles.label}>Username</Text>
                     <TextInput
                         style={styles.input}
                         value={user}
                         onChangeText={(text) => setUser(text)}
+                        placeholder="Fill your username"
                     />
                 </View>
                 <View style={styles.separator} />
-                <Text>Password</Text>
+                <Text style={styles.label}>Password</Text>
                 <TextInput
                     style={styles.input}
                     value={password}
                     onChangeText={(text) => setPassword(text)}
+                    placeholder="Fill your password"
                 />
                 <View style={styles.separator} />
                 <View style={styles.separator} />
                 <TouchableHighlight
                     onPress={() => login(user, password)}
-                    style={styles.button}
+                    style={styles.buttonLogin}
                 >
                     <Text>Login</Text>
                 </TouchableHighlight>
@@ -48,17 +50,26 @@ const LoginScreen = ({ navigation }) => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-    input: {
-        backgroundColor: "#FFFFFF",
-        padding: 8,
-        borderWidth: 1,
-        borderColor: "#ADADAD",
-        borderRadius: 8,
+    container: {
+        padding: 24,
     },
-    button: {
-        padding: 4,
-        backgroundColor: "yellow",
+    label: {
+        marginBottom: 4,
+        fontWeight: "500",
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: "#A3A3A3",
+        borderRadius: 8,
+        paddingVertical: 8,
+        paddingHorizontal: 14,
+        backgroundColor: "#FFFFFF",
+    },
+    buttonLogin: {
+        padding: 8,
         alignItems: "center",
+        borderRadius: 8,
+        backgroundColor: "yellow",
     },
     buttonForgotPassword: {
         alignSelf: "center",
